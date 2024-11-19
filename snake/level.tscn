@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2gqnskejvxud"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_c2wpi"]
+[ext_resource type="Script" path="res://label.gd" id="2_hr3lo"]
+[ext_resource type="PackedScene" uid="uid://cla3idh5nqkgy" path="res://player.tscn" id="2_yugks"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_c2wpi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 521.0
+offset_top = 6.0
+offset_right = 693.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+script = ExtResource("2_hr3lo")
+metadata/new_text = ""
+
+[node name="Back" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 570.0
+offset_right = 161.0
+offset_bottom = 643.0
+theme_override_font_sizes/font_size = 45
+text = "Back"
+
+[node name="Player" parent="." instance=ExtResource("2_yugks")]
+position = Vector2(575, 186)
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
